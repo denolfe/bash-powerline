@@ -11,16 +11,16 @@ __powerline() {
     readonly COLOR_SUCCESS='\[\033[0;32m\]' # green
     readonly COLOR_FAILURE='\[\033[0;31m\]' # red
 
-    readonly SYMBOL_GIT_BRANCH='⑂'
+    readonly SYMBOL_GIT_BRANCH=" "
     readonly SYMBOL_GIT_MODIFIED='*'
     readonly SYMBOL_GIT_PUSH='↑'
     readonly SYMBOL_GIT_PULL='↓'
 
     if [[ -z "$PS_SYMBOL" ]]; then
       case "$(uname)" in
-          Darwin)   PS_SYMBOL='';;
-          Linux)    PS_SYMBOL='$';;
-          *)        PS_SYMBOL='%';;
+          Darwin)   PS_SYMBOL='\n';;
+          Linux)    PS_SYMBOL='\n$';;
+          *)        PS_SYMBOL='\n→';;
       esac
     fi
 
